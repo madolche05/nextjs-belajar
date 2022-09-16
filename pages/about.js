@@ -1,3 +1,18 @@
+import useSWR from "swr"
 export default function about() {
-    return <p>ini halaman About</p>
+    const fetcher = url => fetch(url).then(r => r.json())
+    const {data, error } = useSWR('https://jsonplaceholder.typicode.com/users', fetcher)
+
+    if (error) return <div>failed to load</div>
+    if (!data) return <div>loading...</div>
+    return (
+        <div>
+            {
+                data.map((item)=>
+                <p>{item.username}</p>
+                )
+            }
+        </div>
+    )
+
 }
