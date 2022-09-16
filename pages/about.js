@@ -1,7 +1,7 @@
-import useSWR from "swr"
+import Swr from "swr"
 export default function about() {
     const fetcher = url => fetch(url).then(r => r.json())
-    const {data, error } = useSWR('https://jsonplaceholder.typicode.com/users', fetcher)
+    const {data, error } = Swr('https://jsonplaceholder.typicode.com/users', fetcher)
 
     if (error) return <div>failed to load</div>
     if (!data) return <div>loading...</div>
