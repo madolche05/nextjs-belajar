@@ -9,7 +9,7 @@ export default function about() {
         <div>
             {
                 data.map((item)=>
-                <p>{item.username}</p>
+                <p key={item.id}>{item.username}</p>
                 )
             }
         </div>
