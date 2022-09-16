@@ -7,7 +7,6 @@ export default function about() {
     if (!data) return <div>loading...</div>
     return (
         <div>
-        riyan
             {
                 data.map((item)=>
                 <p key={item.id}>{item.username}</p>
