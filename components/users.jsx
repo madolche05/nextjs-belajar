@@ -7,7 +7,7 @@ if(isloading) return <div>Loading..</div>
 return (
     <>
         {result.map((item)=>
-        <div> {item.username}</div>
+        <div key={item.id}> {item.username}</div>
         )}
     </>
 )
