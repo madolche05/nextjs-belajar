@@ -8,11 +8,11 @@ export default function testing() {
     // if(isloading) return <div>loading</div>
     // console.log(result)
     // const [show, setshow] = useState(false)
-    const tampil =  () => {
+    const tampil = async () => {
         // { !show ? setshow(true) : setshow(false) }
         const api= new Api
         const data={nama:'riyan',kelas:'rpl'}
-        const hasil= api.postData('https://developzero.000webhostapp.com/api/api',data)
+        const hasil= await api.postData('https://developzero.000webhostapp.com/api/api',data)
         
         console.log(hasil)
 
