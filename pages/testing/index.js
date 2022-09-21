@@ -8,18 +8,15 @@ export default function testing() {
     // if(isloading) return <div>loading</div>
     // console.log(result)
     // const [show, setshow] = useState(false)
-    const tampil =() => {
+    const tampil = async () => {
         // { !show ? setshow(true) : setshow(false) }
-        
+        const api= new Api
         const data={nama:'riyan',kelas:'rpl'}
-      
-    }
-    const api= new Api
-    const {result,isloading,iserror}= api.getData('https://developzero.000webhostapp.com/api/api')
-        if(iserror) return <div>adada</div>
-        if(isloading) return <div>loading</div>
-    console.log(result)
+        const hasil= await api.getData('https://developzero.000webhostapp.com/api/api',data)
+        
+        console.log(hasil)
 
+    }
     return (
         <>
         <div className="container m-auto">
